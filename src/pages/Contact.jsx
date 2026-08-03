@@ -237,20 +237,20 @@ export default function Contact() {
             </motion.div>
 
             {/* Right Side: Calendly Live Embed */}
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3} className="h-full min-h-[650px]">
-              <div className="w-full h-full glass-card-premium rounded-3xl border border-white/10 flex flex-col items-center p-6 lg:p-8 text-center relative overflow-hidden">
+            <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3} className="h-full">
+              <div className="w-full h-full glass-card-premium rounded-3xl border border-white/10 flex flex-col items-center p-4 lg:p-6 text-center relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full pointer-events-none"></div>
                 
-                <h3 className="text-2xl font-bold mb-2 relative z-10">Prefer to skip the form?</h3>
-                <p className="text-white/60 mb-6 text-sm relative z-10 max-w-md">
+                <h3 className="text-2xl font-bold mb-1 relative z-10">Prefer to skip the form?</h3>
+                <p className="text-white/60 mb-4 text-sm relative z-10 max-w-md">
                   Schedule a direct 30-minute Zoom call with our Lead AI Strategist using our live calendar below.
                 </p>
                 
                 {/* Live Calendly Widget */}
-                <div className="w-full h-[600px] rounded-2xl overflow-hidden relative z-10 border border-white/10 shadow-2xl bg-[#09090b]">
+                <div className="w-full h-[700px] rounded-2xl overflow-hidden relative z-10 border border-white/10 shadow-2xl bg-[#09090b]">
                   <iframe
-                    src="https://calendly.com/agentictrive/30min?embed_domain=agentictrive.in&embed_type=Inline&background_color=09090b&text_color=ffffff&primary_color=3b82f6"
+                    src="https://calendly.com/agentictrive/30min?embed_domain=agentictrive.in&embed_type=Inline&background_color=09090b&text_color=ffffff&primary_color=3b82f6&hide_landing_page_details=1&hide_gdpr_banner=1"
                     width="100%"
                     height="100%"
                     frameBorder="0"
