@@ -236,32 +236,27 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* Right Side: Calendly Placeholder */}
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3} className="h-full min-h-[600px]">
-              <div className="w-full h-full glass-card-premium rounded-3xl border border-white/10 flex flex-col items-center justify-center p-12 text-center relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full"></div>
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full"></div>
+            {/* Right Side: Calendly Live Embed */}
+            <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3} className="h-full min-h-[650px]">
+              <div className="w-full h-full glass-card-premium rounded-3xl border border-white/10 flex flex-col items-center p-6 lg:p-8 text-center relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full pointer-events-none"></div>
                 
-                <h3 className="text-2xl font-bold mb-4 relative z-10">Prefer to skip the form?</h3>
-                <p className="text-white/60 mb-8 relative z-10">Schedule a direct Zoom call with our Lead AI Strategist using the calendar below.</p>
+                <h3 className="text-2xl font-bold mb-2 relative z-10">Prefer to skip the form?</h3>
+                <p className="text-white/60 mb-6 text-sm relative z-10 max-w-md">
+                  Schedule a direct 30-minute Zoom call with our Lead AI Strategist using our live calendar below.
+                </p>
                 
-                {/* Fake Calendly UI */}
-                <div className="w-full max-w-sm bg-white/5 border border-white/10 rounded-2xl p-6 relative z-10 shadow-2xl">
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="font-bold">Select a Date & Time</span>
-                    <span className="text-xs text-white/40">Powered by Calendly</span>
-                  </div>
-                  <div className="grid grid-cols-7 gap-2 mb-6">
-                    {['S','M','T','W','T','F','S'].map((d,i) => <div key={i} className="text-xs text-white/40 text-center">{d}</div>)}
-                    {[...Array(31)].map((_,i) => (
-                      <div key={i} className={`w-8 h-8 rounded-full flex items-center justify-center text-sm cursor-pointer ${i===14 ? 'bg-primary text-black font-bold' : 'hover:bg-white/10'}`}>
-                        {i+1}
-                      </div>
-                    ))}
-                  </div>
-                  <button className="w-full border border-white/20 text-white font-bold py-3 rounded-xl hover:bg-white/10 transition-colors">
-                    View Available Times
-                  </button>
+                {/* Live Calendly Widget */}
+                <div className="w-full h-[600px] rounded-2xl overflow-hidden relative z-10 border border-white/10 shadow-2xl bg-[#09090b]">
+                  <iframe
+                    src="https://calendly.com/agentictrive/30min?embed_domain=agentictrive.in&embed_type=Inline&background_color=09090b&text_color=ffffff&primary_color=3b82f6"
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    title="Schedule a Call with Agentictrive"
+                    className="w-full h-full"
+                  ></iframe>
                 </div>
               </div>
             </motion.div>
