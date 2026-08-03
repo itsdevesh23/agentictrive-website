@@ -248,14 +248,15 @@ export default function Contact() {
                 </p>
                 
                 {/* Live Calendly Widget (Light Mode) */}
-                <div className="w-full h-[700px] rounded-2xl overflow-hidden relative z-10 border border-white/20 shadow-2xl bg-white">
+                <div className="w-full h-[760px] rounded-2xl overflow-hidden relative z-10 border border-white/20 shadow-2xl bg-white">
                   <iframe
-                    src="https://calendly.com/agentictrive/30min?embed_domain=agentictrive.in&embed_type=Inline&background_color=ffffff&text_color=0f172a&primary_color=2563eb&hide_landing_page_details=1&hide_gdpr_banner=1"
+                    src="https://calendly.com/agentictrive/30min?embed_domain=agentictrive.in&embed_type=Inline&background_color=ffffff&text_color=0f172a&primary_color=2563eb&hide_landing_page_details=1&hide_event_type_details=1&hide_gdpr_banner=1"
                     width="100%"
                     height="100%"
                     frameBorder="0"
+                    scrolling="no"
                     title="Schedule a Call with Agentictrive"
-                    className="w-full h-full"
+                    className="w-full h-full border-0"
                   ></iframe>
                 </div>
               </div>
