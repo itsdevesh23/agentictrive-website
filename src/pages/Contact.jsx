@@ -247,10 +247,10 @@ export default function Contact() {
                   Schedule a direct 30-minute Zoom call with our Lead AI Strategist using our live calendar below.
                 </p>
                 
-                {/* Live Calendly Widget */}
-                <div className="w-full h-[700px] rounded-2xl overflow-hidden relative z-10 border border-white/10 shadow-2xl bg-[#09090b]">
+                {/* Live Calendly Widget (Light Mode) */}
+                <div className="w-full h-[700px] rounded-2xl overflow-hidden relative z-10 border border-white/20 shadow-2xl bg-white">
                   <iframe
-                    src="https://calendly.com/agentictrive/30min?embed_domain=agentictrive.in&embed_type=Inline&background_color=09090b&text_color=ffffff&primary_color=3b82f6&hide_landing_page_details=1&hide_gdpr_banner=1"
+                    src="https://calendly.com/agentictrive/30min?embed_domain=agentictrive.in&embed_type=Inline&background_color=ffffff&text_color=0f172a&primary_color=2563eb&hide_landing_page_details=1&hide_gdpr_banner=1"
                     width="100%"
                     height="100%"
                     frameBorder="0"
