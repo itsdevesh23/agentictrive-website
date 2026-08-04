@@ -20,7 +20,7 @@ export default function Layout() {
   return (
     <div className="bg-[#09090B] min-h-screen text-white font-body-md overflow-x-hidden flex flex-col">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-[#09090B]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl h-20 flex items-center">
+      <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-[#09090B]/90 via-[#09090B]/75 to-[#09090B]/40 backdrop-blur-md border-b border-white/5 shadow-2xl h-20 flex items-center">
         <div className="flex justify-between items-center max-w-container-max mx-auto px-4 md:px-margin-desktop w-full">
           {/* Logo */}
           <Link to="/" onClick={scrollToTop} className="flex items-center gap-2 sm:gap-3 group shrink-0">
