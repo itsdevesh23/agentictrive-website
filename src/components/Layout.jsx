@@ -185,8 +185,12 @@ export default function Layout() {
                 <li className="flex items-center gap-2">
                   <span>✉️</span> <a href="mailto:agentictrive@gmail.com" className="hover:text-white transition-colors text-xs sm:text-sm">agentictrive@gmail.com</a>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span>📱</span> <a href="https://wa.me/916303690660" className="hover:text-white transition-colors text-xs sm:text-sm">+91 63036 90660</a>
+                <li className="flex items-start gap-2">
+                  <span className="shrink-0 mt-0.5">📱</span>
+                  <div className="flex flex-col space-y-1 text-xs sm:text-sm">
+                    <a href="https://wa.me/916303690660" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+91 63036 90660</a>
+                    <a href="https://wa.me/919182200626" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+91 91822 00626</a>
+                  </div>
                 </li>
               </ul>
             </div>
