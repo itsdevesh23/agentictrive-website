@@ -23,16 +23,16 @@ export default function Layout() {
       <nav className="fixed top-0 w-full z-50 glass-card border-b border-white/10 shadow-lg h-20 flex items-center">
         <div className="flex justify-between items-center max-w-container-max mx-auto px-4 md:px-margin-desktop w-full">
           {/* Logo */}
-          <Link to="/" onClick={scrollToTop} className="flex items-center gap-2.5 sm:gap-3.5 group">
-            <img src={iconImg} alt="Agentictrive Icon" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.7)] group-hover:scale-105 transition-transform" />
-            <span className="font-headline-md text-lg sm:text-xl md:text-2xl font-extrabold tracking-wider sm:tracking-widest uppercase flex items-center select-none">
+          <Link to="/" onClick={scrollToTop} className="flex items-center gap-2 sm:gap-3 group shrink-0">
+            <img src={iconImg} alt="Agentictrive Icon" className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.7)] group-hover:scale-105 transition-transform" />
+            <span className="font-headline-md text-base sm:text-lg lg:text-xl xl:text-2xl font-extrabold tracking-wider lg:tracking-widest uppercase flex items-center select-none">
               <span className="text-white drop-shadow-sm">AGENTIC</span>
               <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 bg-clip-text text-transparent ml-[2px] font-black drop-shadow-[0_0_15px_rgba(59,130,246,0.6)]">TRIVE</span>
             </span>
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-8">
             <NavLink to="/" end onClick={scrollToTop} className={navLinkStyle}>Home</NavLink>
             <NavLink to="/solutions" onClick={scrollToTop} className={navLinkStyle}>Solutions</NavLink>
             <NavLink to="/systems" onClick={scrollToTop} className={navLinkStyle}>Business Systems</NavLink>
@@ -41,8 +41,8 @@ export default function Layout() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Link to="/contact" onClick={scrollToTop} className="bg-white text-black font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-white/90 transition-all hover:scale-105 active:scale-95 flex items-center gap-2 shadow-md">
+          <div className="hidden lg:block shrink-0">
+            <Link to="/contact" onClick={scrollToTop} className="bg-white text-black font-semibold text-xs xl:text-sm px-4 xl:px-5 py-2.5 rounded-full hover:bg-white/90 transition-all hover:scale-105 active:scale-95 flex items-center gap-2 shadow-md whitespace-nowrap">
               Book Free AI Audit
             </Link>
           </div>
@@ -50,7 +50,7 @@ export default function Layout() {
           {/* Mobile Hamburger Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 active:scale-95 transition-all"
+            className="lg:hidden p-2 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 active:scale-95 transition-all"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? (
@@ -67,7 +67,7 @@ export default function Layout() {
 
         {/* Mobile Slide-Down Menu Overlay */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-20 left-0 w-full bg-[#09090B]/98 backdrop-blur-xl border-b border-white/10 shadow-2xl px-6 py-6 transition-all duration-300 animate-fadeIn">
+          <div className="lg:hidden absolute top-20 left-0 w-full bg-[#09090B]/98 backdrop-blur-xl border-b border-white/10 shadow-2xl px-6 py-6 transition-all duration-300 animate-fadeIn">
             <div className="flex flex-col space-y-1 mb-6">
               <NavLink to="/" end onClick={scrollToTop} className={mobileNavLinkStyle}>
                 <span>Home</span>
