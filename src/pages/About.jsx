@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import logoImg from '../assets/logo.png';
 import { 
   ArrowRight, Users, Target, Shield, Zap, Code, Layout, 
   MessageSquare
@@ -21,10 +22,13 @@ export default function About() {
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-8 hero-gradient-bg flex items-center justify-center">
         <div className="max-w-container-max mx-auto px-margin-desktop text-center">
-          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="font-headline-xl text-5xl lg:text-6xl font-bold mb-6">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex justify-center mb-6">
+            <img src={logoImg} alt="Agentictrive Official Logo" className="w-28 h-28 object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.6)] rounded-2xl" />
+          </motion.div>
+          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} custom={1} className="font-headline-xl text-5xl lg:text-6xl font-bold mb-6">
             Building the Future of <br/><span className="gradient-text-primary">Intelligent Businesses</span>
           </motion.h1>
-          <motion.p custom={1} initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-white/60 max-w-3xl mx-auto">
+          <motion.p custom={2} initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-white/60 max-w-3xl mx-auto">
             We are a consultancy and engineering firm dedicated to eliminating manual work and accelerating business growth through automation.
           </motion.p>
         </div>

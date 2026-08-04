@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
-import { BrainCircuit } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 export default function Layout() {
   const scrollToTop = () => {
@@ -15,9 +15,9 @@ export default function Layout() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass-card border-b-0 border-white/5 shadow-sm h-20 flex items-center">
         <div className="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop w-full">
-          <Link to="/" onClick={scrollToTop} className="font-headline-md text-2xl font-bold flex items-center gap-2">
-            <BrainCircuit className="text-primary" size={28} />
-            Agentictrive
+          <Link to="/" onClick={scrollToTop} className="flex items-center gap-3">
+            <img src={logoImg} alt="Agentictrive Logo" className="w-9 h-9 object-contain rounded-lg shadow-md" />
+            <span className="font-headline-md text-2xl font-bold text-white tracking-wide">Agentictrive</span>
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <NavLink to="/" end onClick={scrollToTop} className={navLinkStyle}>Home</NavLink>
@@ -42,9 +42,9 @@ export default function Layout() {
         <div className="max-w-container-max mx-auto px-margin-desktop">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
             <div className="col-span-2 md:col-span-1">
-              <Link to="/" onClick={scrollToTop} className="font-headline-md text-2xl font-bold flex items-center gap-2 mb-6">
-                <BrainCircuit className="text-primary" size={24} />
-                Agentictrive
+              <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 mb-6">
+                <img src={logoImg} alt="Agentictrive Logo" className="w-8 h-8 object-contain rounded-lg" />
+                <span className="font-headline-md text-2xl font-bold text-white tracking-wide">Agentictrive</span>
               </Link>
               <p className="text-sm text-white/50">Building intelligent systems for the modern workforce.</p>
             </div>
