@@ -125,11 +125,24 @@ app.post('/api/contact', async (req, res) => {
       `,
     };
 
-    // Send emails in parallel
-    await Promise.all([
+    const tasks = [
       transporter.sendMail(adminMailOptions),
       transporter.sendMail(leadMailOptions)
-    ]);
+    ];
+
+    // Optional Google Sheets Webhook Sync
+    const sheetWebhook = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+    if (sheetWebhook) {
+      tasks.push(
+        fetch(sheetWebhook, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ firstName, lastName, workEmail, phone, company, message })
+        }).catch(err => console.error('⚠️ Google Sheets Sync Error:', err))
+      );
+    }
+
+    await Promise.all(tasks);
 
     console.log(`✅ [SMTP Success] Lead emails sent for ${firstName} ${lastName} (${workEmail})`);
     return res.status(200).json({
