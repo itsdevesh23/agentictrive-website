@@ -16,8 +16,12 @@ export default function Layout() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass-card border-b-0 border-white/5 shadow-sm h-20 flex items-center">
         <div className="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop w-full">
-          <Link to="/" onClick={scrollToTop} className="flex items-center group">
-            <img src={iconImg} alt="Agentictrive" className="w-14 h-14 md:w-16 md:h-16 object-contain drop-shadow-[0_0_20px_rgba(59,130,246,0.7)] group-hover:scale-105 transition-transform" />
+          <Link to="/" onClick={scrollToTop} className="flex items-center gap-3.5 group">
+            <img src={iconImg} alt="Agentictrive Icon" className="w-14 h-14 md:w-16 md:h-16 object-contain drop-shadow-[0_0_20px_rgba(59,130,246,0.7)] group-hover:scale-105 transition-transform" />
+            <span className="font-headline-md text-xl md:text-2xl font-extrabold tracking-widest uppercase flex items-center select-none">
+              <span className="text-white drop-shadow-sm">AGENTIC</span>
+              <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 bg-clip-text text-transparent ml-[2px] font-black drop-shadow-[0_0_15px_rgba(59,130,246,0.6)]">TRIVE</span>
+            </span>
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <NavLink to="/" end onClick={scrollToTop} className={navLinkStyle}>Home</NavLink>
@@ -42,8 +46,12 @@ export default function Layout() {
         <div className="max-w-container-max mx-auto px-margin-desktop">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
             <div className="col-span-2 md:col-span-1">
-              <Link to="/" onClick={scrollToTop} className="inline-block mb-4">
-                <img src={fullLogoImg} alt="Agentictrive Logo" className="h-32 md:h-36 w-auto object-contain -ml-4" />
+              <Link to="/" onClick={scrollToTop} className="flex items-center gap-3.5 mb-4 group">
+                <img src={iconImg} alt="Agentictrive Icon" className="w-11 h-11 object-contain group-hover:scale-105 transition-transform" />
+                <span className="font-headline-md text-2xl md:text-3xl font-extrabold tracking-widest uppercase flex items-center select-none">
+                  <span className="text-white drop-shadow-sm">AGENTIC</span>
+                  <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 bg-clip-text text-transparent ml-[3px] font-black">TRIVE</span>
+                </span>
               </Link>
               <p className="text-sm text-white/50">Building intelligent systems for the modern workforce.</p>
             </div>
