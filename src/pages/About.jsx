@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import logoImg from '../assets/agentictrive_logo.png';
+import logoImg from '../assets/agentictrive_logo.svg';
 import { 
   ArrowRight, Users, Target, Shield, Zap, Code, Layout, 
   MessageSquare
