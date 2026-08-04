@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/agentictrive_logo.png';
 
 export default function Layout() {
   const scrollToTop = () => {
