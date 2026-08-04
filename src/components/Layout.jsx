@@ -16,11 +16,11 @@ export default function Layout() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass-card border-b-0 border-white/5 shadow-sm h-20 flex items-center">
         <div className="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop w-full">
-          <Link to="/" onClick={scrollToTop} className="flex items-center gap-3.5 group">
-            <img src={iconImg} alt="Agentictrive Icon" className="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-[0_0_18px_rgba(59,130,246,0.7)] group-hover:scale-105 transition-transform" />
-            <span className="font-headline-md text-2xl md:text-3xl font-extrabold tracking-widest uppercase flex items-center select-none">
+          <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 group">
+            <img src={iconImg} alt="Agentictrive Icon" className="w-11 h-11 object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.6)] group-hover:scale-105 transition-transform" />
+            <span className="font-headline-md text-xl md:text-2xl font-extrabold tracking-widest uppercase flex items-center select-none">
               <span className="text-white drop-shadow-sm">AGENTIC</span>
-              <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 bg-clip-text text-transparent ml-[3px] font-black drop-shadow-[0_0_18px_rgba(59,130,246,0.7)]">TRIVE</span>
+              <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 bg-clip-text text-transparent ml-[2px] font-black drop-shadow-[0_0_15px_rgba(59,130,246,0.6)]">TRIVE</span>
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-8">
