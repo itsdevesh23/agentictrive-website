@@ -80,7 +80,7 @@ export default function Home() {
             </div>
 
             {/* Right Content - Animated Visualization */}
-            <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible" className="relative h-[340px] sm:h-[440px] lg:h-[500px] w-full flex items-center justify-center">
+            <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible" className="relative h-[360px] sm:h-[440px] lg:h-[500px] w-full flex items-center justify-center mt-12 lg:mt-0">
               <div className="relative w-full max-w-md aspect-square glass-card-premium rounded-full border border-white/10 flex items-center justify-center">
                 
                 {/* Central Hub */}

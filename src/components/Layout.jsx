@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import iconImg from '../assets/agentictrive_icon.svg';
-import fullLogoImg from '../assets/agentictrive_logo.svg';
 
 export default function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,15 +35,15 @@ export default function Layout() {
   const mobileNavLinkStyle = ({ isActive }) => 
     `text-lg font-bold py-3.5 px-4 rounded-xl transition-all flex items-center justify-between ${
       isActive 
-        ? 'bg-blue-600/15 text-primary border border-blue-500/30' 
-        : 'text-white/80 hover:text-white hover:bg-white/5'
+        ? 'bg-blue-600/20 text-primary border border-blue-500/40' 
+        : 'text-white/90 hover:text-white bg-white/5 hover:bg-white/10'
     }`;
 
   return (
     <div className="bg-[#09090B] min-h-screen text-white font-body-md overflow-x-hidden flex flex-col">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-[#09090B]/95 via-[#09090B]/85 to-[#09090B]/50 backdrop-blur-xl border-b border-white/10 shadow-2xl h-20 flex items-center">
-        <div className="flex justify-between items-center max-w-container-max mx-auto px-4 md:px-margin-desktop w-full">
+      {/* Navigation Header */}
+      <header className="fixed top-0 w-full z-50 bg-gradient-to-b from-[#09090B] via-[#09090B]/90 to-[#09090B]/70 backdrop-blur-xl border-b border-white/10 shadow-2xl">
+        <nav className="h-20 flex items-center justify-between max-w-container-max mx-auto px-4 md:px-margin-desktop w-full">
           {/* Logo */}
           <Link to="/" onClick={scrollToTop} className="flex items-center gap-2 sm:gap-3 group shrink-0">
             <img src={iconImg} alt="Agentictrive Icon" className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.7)] group-hover:scale-105 transition-transform" />
@@ -73,11 +72,11 @@ export default function Layout() {
           {/* Mobile Hamburger Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 active:scale-95 transition-all flex items-center justify-center"
+            className="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 active:scale-95 transition-all flex items-center justify-center z-50"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? (
-              <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
@@ -86,13 +85,13 @@ export default function Layout() {
               </svg>
             )}
           </button>
-        </div>
+        </nav>
 
-        {/* Mobile Fullscreen Slide-Down Menu Overlay */}
+        {/* Mobile Fullscreen Menu Drawer (Positioned outside nav h-20 container) */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-[#09090B]/98 backdrop-blur-2xl border-b border-white/10 shadow-2xl px-6 pt-6 pb-12 flex flex-col justify-between overflow-y-auto z-50 animate-fadeIn">
-            <div className="flex flex-col space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-white/40 mb-2 px-4">Navigation</span>
+          <div className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-[#09090B] border-t border-white/10 shadow-2xl px-6 pt-6 pb-12 flex flex-col justify-between overflow-y-auto z-40">
+            <div className="flex flex-col space-y-3">
+              <span className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1 px-1">Navigation</span>
               <NavLink to="/" end onClick={scrollToTop} className={mobileNavLinkStyle}>
                 <span>Home</span>
                 <span className="text-[#3B82F6]">➔</span>
@@ -135,7 +134,7 @@ export default function Layout() {
             </div>
           </div>
         )}
-      </nav>
+      </header>
 
       {/* Main Content Area */}
       <main className="flex-grow">
