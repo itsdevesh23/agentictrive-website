@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import iconImg from '../assets/agentictrive_icon.svg';
-import textImg from '../assets/agentictrive_text.svg';
+import fullLogoImg from '../assets/agentictrive_logo.svg';
 
 export default function Layout() {
   const scrollToTop = () => {
@@ -46,12 +46,8 @@ export default function Layout() {
         <div className="max-w-container-max mx-auto px-margin-desktop">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
             <div className="col-span-2 md:col-span-1">
-              <Link to="/" onClick={scrollToTop} className="flex items-center gap-3.5 mb-4 group">
-                <img src={iconImg} alt="Agentictrive Icon" className="w-11 h-11 md:w-12 md:h-12 object-contain group-hover:scale-105 transition-transform" />
-                <span className="font-headline-md text-2xl md:text-3xl font-extrabold tracking-widest uppercase flex items-center select-none">
-                  <span className="text-white drop-shadow-sm">AGENTIC</span>
-                  <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 bg-clip-text text-transparent ml-[3px] font-black">TRIVE</span>
-                </span>
+              <Link to="/" onClick={scrollToTop} className="flex items-center mb-4">
+                <img src={fullLogoImg} alt="Agentictrive Logo" className="h-16 w-auto object-contain" />
               </Link>
               <p className="text-sm text-white/50">Building intelligent systems for the modern workforce.</p>
             </div>
