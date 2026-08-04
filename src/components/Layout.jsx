@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import iconImg from '../assets/agentictrive_icon.svg';
+import textImg from '../assets/agentictrive_text.svg';
 
 export default function Layout() {
   const scrollToTop = () => {
@@ -17,7 +18,7 @@ export default function Layout() {
         <div className="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop w-full">
           <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 group">
             <img src={iconImg} alt="Agentictrive Icon" className="w-10 h-10 object-contain drop-shadow-[0_0_12px_rgba(59,130,246,0.5)] group-hover:scale-105 transition-transform" />
-            <span className="font-headline-md text-2xl font-bold text-white tracking-wide">Agentictrive</span>
+            <img src={textImg} alt="AGENTICTRIVE" className="h-6 w-auto object-contain" />
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <NavLink to="/" end onClick={scrollToTop} className={navLinkStyle}>Home</NavLink>
@@ -44,7 +45,7 @@ export default function Layout() {
             <div className="col-span-2 md:col-span-1">
               <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 mb-4 group">
                 <img src={iconImg} alt="Agentictrive Icon" className="w-9 h-9 object-contain group-hover:scale-105 transition-transform" />
-                <span className="font-headline-md text-2xl font-bold text-white tracking-wide">Agentictrive</span>
+                <img src={textImg} alt="AGENTICTRIVE" className="h-5 w-auto object-contain" />
               </Link>
               <p className="text-sm text-white/50">Building intelligent systems for the modern workforce.</p>
             </div>
