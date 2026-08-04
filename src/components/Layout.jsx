@@ -46,8 +46,8 @@ export default function Layout() {
         <div className="max-w-container-max mx-auto px-margin-desktop">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
             <div className="col-span-2 md:col-span-1">
-              <Link to="/" onClick={scrollToTop} className="flex items-center mb-4">
-                <img src={fullLogoImg} alt="Agentictrive Logo" className="h-16 w-auto object-contain" />
+              <Link to="/" onClick={scrollToTop} className="inline-block mb-4">
+                <img src={fullLogoImg} alt="Agentictrive Logo" className="h-32 md:h-36 w-auto object-contain -ml-4" />
               </Link>
               <p className="text-sm text-white/50">Building intelligent systems for the modern workforce.</p>
             </div>
