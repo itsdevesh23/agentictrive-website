@@ -53,34 +53,34 @@ export default function Home() {
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] animate-pulse-glow" style={{animationDelay: '1.5s'}}></div>
         </div>
 
-        <div className="max-w-container-max mx-auto px-margin-desktop relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-desktop relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <motion.div custom={1} variants={fadeUp} initial="hidden" animate="visible">
-                <h1 className="font-headline-xl text-5xl lg:text-[72px] leading-[1.1] tracking-tight mb-4">
+                <h1 className="font-headline-xl text-3xl sm:text-5xl lg:text-[72px] leading-[1.15] lg:leading-[1.1] tracking-tight mb-4">
                   Build a business <br />
                   <span className="gradient-text-primary">that runs itself.</span>
                 </h1>
               </motion.div>
 
-              <motion.p custom={2} variants={fadeUp} initial="hidden" animate="visible" className="text-lg text-white/60 max-w-lg leading-relaxed">
+              <motion.p custom={2} variants={fadeUp} initial="hidden" animate="visible" className="text-base sm:text-lg text-white/60 max-w-lg leading-relaxed">
                 From customer conversations to internal workflows, we create intelligent systems that work around the clock—so your team can focus on what matters most.
               </motion.p>
 
-              <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link to="/contact" className="bg-white text-black font-semibold text-base px-8 py-4 rounded-full hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 group">
+              <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 pt-2 sm:pt-4">
+                <Link to="/contact" className="bg-white text-black font-bold text-base px-8 py-4 rounded-full hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 group shadow-xl">
                   Book Free AI Audit
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/solutions" className="glass-card text-white font-semibold text-base px-8 py-4 rounded-full hover:bg-white/10 transition-all flex items-center justify-center">
+                <Link to="/solutions" className="glass-card text-white font-semibold text-base px-8 py-4 rounded-full hover:bg-white/10 transition-all flex items-center justify-center active:scale-95">
                   Explore Solutions
                 </Link>
               </motion.div>
             </div>
 
             {/* Right Content - Animated Visualization */}
-            <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible" className="relative h-[500px] w-full flex items-center justify-center">
+            <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible" className="relative h-[340px] sm:h-[440px] lg:h-[500px] w-full flex items-center justify-center">
               <div className="relative w-full max-w-md aspect-square glass-card-premium rounded-full border border-white/10 flex items-center justify-center">
                 
                 {/* Central Hub */}

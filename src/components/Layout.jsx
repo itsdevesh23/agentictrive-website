@@ -1,10 +1,29 @@
-import React, { useState } from 'react';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import iconImg from '../assets/agentictrive_icon.svg';
 import fullLogoImg from '../assets/agentictrive_logo.svg';
 
 export default function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -15,17 +34,21 @@ export default function Layout() {
     `text-sm font-medium transition-colors ${isActive ? 'text-primary font-bold' : 'text-white/70 hover:text-white'}`;
 
   const mobileNavLinkStyle = ({ isActive }) => 
-    `text-lg font-semibold py-3 border-b border-white/5 transition-colors flex items-center justify-between ${isActive ? 'text-primary' : 'text-white/80 hover:text-white'}`;
+    `text-lg font-bold py-3.5 px-4 rounded-xl transition-all flex items-center justify-between ${
+      isActive 
+        ? 'bg-blue-600/15 text-primary border border-blue-500/30' 
+        : 'text-white/80 hover:text-white hover:bg-white/5'
+    }`;
 
   return (
     <div className="bg-[#09090B] min-h-screen text-white font-body-md overflow-x-hidden flex flex-col">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-[#09090B]/90 via-[#09090B]/75 to-[#09090B]/40 backdrop-blur-md border-b border-white/5 shadow-2xl h-20 flex items-center">
+      <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-[#09090B]/95 via-[#09090B]/85 to-[#09090B]/50 backdrop-blur-xl border-b border-white/10 shadow-2xl h-20 flex items-center">
         <div className="flex justify-between items-center max-w-container-max mx-auto px-4 md:px-margin-desktop w-full">
           {/* Logo */}
           <Link to="/" onClick={scrollToTop} className="flex items-center gap-2 sm:gap-3 group shrink-0">
             <img src={iconImg} alt="Agentictrive Icon" className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.7)] group-hover:scale-105 transition-transform" />
-            <span className="font-headline-md text-base sm:text-lg lg:text-xl xl:text-2xl font-extrabold tracking-wider lg:tracking-widest uppercase flex items-center select-none">
+            <span className="font-headline-md text-lg sm:text-xl xl:text-2xl font-extrabold tracking-wider uppercase flex items-center select-none">
               <span className="text-white drop-shadow-sm">AGENTIC</span>
               <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 bg-clip-text text-transparent ml-[2px] font-black drop-shadow-[0_0_15px_rgba(59,130,246,0.6)]">TRIVE</span>
             </span>
@@ -50,54 +73,66 @@ export default function Layout() {
           {/* Mobile Hamburger Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 active:scale-95 transition-all"
+            className="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 active:scale-95 transition-all flex items-center justify-center"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
         </div>
 
-        {/* Mobile Slide-Down Menu Overlay */}
+        {/* Mobile Fullscreen Slide-Down Menu Overlay */}
         {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-20 left-0 w-full bg-[#09090B]/98 backdrop-blur-xl border-b border-white/10 shadow-2xl px-6 py-6 transition-all duration-300 animate-fadeIn">
-            <div className="flex flex-col space-y-1 mb-6">
+          <div className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-[#09090B]/98 backdrop-blur-2xl border-b border-white/10 shadow-2xl px-6 pt-6 pb-12 flex flex-col justify-between overflow-y-auto z-50 animate-fadeIn">
+            <div className="flex flex-col space-y-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-white/40 mb-2 px-4">Navigation</span>
               <NavLink to="/" end onClick={scrollToTop} className={mobileNavLinkStyle}>
                 <span>Home</span>
-                <span className="text-white/40">➔</span>
+                <span className="text-[#3B82F6]">➔</span>
               </NavLink>
               <NavLink to="/solutions" onClick={scrollToTop} className={mobileNavLinkStyle}>
                 <span>Solutions</span>
-                <span className="text-white/40">➔</span>
+                <span className="text-[#3B82F6]">➔</span>
               </NavLink>
               <NavLink to="/systems" onClick={scrollToTop} className={mobileNavLinkStyle}>
                 <span>Business Systems</span>
-                <span className="text-white/40">➔</span>
+                <span className="text-[#3B82F6]">➔</span>
               </NavLink>
               <NavLink to="/about" onClick={scrollToTop} className={mobileNavLinkStyle}>
                 <span>About Us</span>
-                <span className="text-white/40">➔</span>
+                <span className="text-[#3B82F6]">➔</span>
               </NavLink>
               <NavLink to="/contact" onClick={scrollToTop} className={mobileNavLinkStyle}>
                 <span>Contact</span>
-                <span className="text-white/40">➔</span>
+                <span className="text-[#3B82F6]">➔</span>
               </NavLink>
             </div>
 
-            <Link 
-              to="/contact" 
-              onClick={scrollToTop} 
-              className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold text-base py-3.5 rounded-xl hover:opacity-95 transition-all text-center block shadow-lg shadow-blue-500/25 active:scale-98"
-            >
-              Book Free AI Audit →
-            </Link>
+            <div className="pt-6 space-y-3">
+              <Link 
+                to="/contact" 
+                onClick={scrollToTop} 
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold text-base py-4 rounded-xl hover:opacity-95 transition-all text-center block shadow-lg shadow-blue-500/25 active:scale-98"
+              >
+                Book Free AI Audit →
+              </Link>
+              
+              <a 
+                href="https://wa.me/916303690660" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold text-sm py-3 rounded-xl hover:bg-emerald-500/20 transition-all text-center flex items-center justify-center gap-2 active:scale-98"
+              >
+                <span>💬</span> Chat on WhatsApp (+91 63036 90660)
+              </a>
+            </div>
           </div>
         )}
       </nav>
@@ -108,12 +143,12 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 bg-[#050505] pt-16 pb-10 mt-auto">
+      <footer className="border-t border-white/10 bg-[#050505] pt-14 pb-10 mt-auto">
         <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
             <div className="sm:col-span-2 md:col-span-1">
-              <Link to="/" onClick={scrollToTop} className="flex items-center gap-3.5 mb-4 group">
-                <img src={iconImg} alt="Agentictrive Icon" className="w-11 h-11 object-contain group-hover:scale-105 transition-transform" />
+              <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 mb-4 group">
+                <img src={iconImg} alt="Agentictrive Icon" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform" />
                 <span className="font-headline-md text-xl md:text-2xl font-extrabold tracking-widest uppercase flex items-center select-none">
                   <span className="text-white drop-shadow-sm">AGENTIC</span>
                   <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 bg-clip-text text-transparent ml-[3px] font-black">TRIVE</span>
@@ -145,14 +180,14 @@ export default function Layout() {
             <div>
               <h5 className="font-bold text-base text-white mb-4">Get in Touch</h5>
               <ul className="space-y-3 text-sm text-white/60">
-                <li className="flex items-center gap-2">
-                  <span>📍</span> <span>Tirupati, AP, 517501</span>
+                <li className="flex items-start gap-2">
+                  <span className="shrink-0 mt-0.5">📍</span> <span className="text-xs sm:text-sm">22-6-45 Akkarampalli, Tirupati, AP, 517501</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span>✉️</span> <a href="mailto:agentictrive@gmail.com" className="hover:text-white transition-colors">agentictrive@gmail.com</a>
+                  <span>✉️</span> <a href="mailto:agentictrive@gmail.com" className="hover:text-white transition-colors text-xs sm:text-sm">agentictrive@gmail.com</a>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span>📱</span> <a href="https://wa.me/916303690660" className="hover:text-white transition-colors">+91 63036 90660</a>
+                  <span>📱</span> <a href="https://wa.me/916303690660" className="hover:text-white transition-colors text-xs sm:text-sm">+91 63036 90660</a>
                 </li>
               </ul>
             </div>

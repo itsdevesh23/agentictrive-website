@@ -69,19 +69,19 @@ export default function Contact() {
     <>
       {/* HERO SECTION */}
       <section className="relative pt-36 pb-16 hero-gradient-bg flex items-center justify-center">
-        <div className="max-w-container-max mx-auto px-margin-desktop text-center">
-          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="font-headline-xl text-5xl lg:text-6xl font-bold mb-6">
+        <div className="max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-desktop text-center">
+          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="font-headline-xl text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             Let's Build Something <br/><span className="gradient-text-primary">Intelligent Together</span>
           </motion.h1>
-          <motion.p custom={1} initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-white/60 max-w-2xl mx-auto">
+          <motion.p custom={1} initial="hidden" animate="visible" variants={fadeUp} className="text-base sm:text-xl text-white/60 max-w-2xl mx-auto">
             Book your free AI audit or leave us a message. We'll identify the highest-ROI automation opportunities for your specific business.
           </motion.p>
         </div>
       </section>
 
       {/* CONTACT LAYOUT */}
-      <section className="py-10">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+      <section className="py-8 sm:py-12">
+        <div className="max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-desktop">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
             
             {/* Left Side: Direct Contact & Form */}
