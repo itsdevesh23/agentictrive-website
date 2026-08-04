@@ -40,7 +40,7 @@ export default function Layout() {
     }`;
 
   return (
-    <div className="bg-[#09090B] min-h-screen text-white font-body-md overflow-x-hidden flex flex-col">
+    <div className="bg-[#09090B] min-h-screen text-white font-body-md overflow-x-hidden flex flex-col relative">
       {/* Navigation Header */}
       <header className="fixed top-0 w-full z-50 bg-gradient-to-b from-[#09090B] via-[#09090B]/90 to-[#09090B]/70 backdrop-blur-xl border-b border-white/10 shadow-2xl">
         <nav className="h-20 flex items-center justify-between max-w-container-max mx-auto px-4 md:px-margin-desktop w-full">
@@ -86,55 +86,55 @@ export default function Layout() {
             )}
           </button>
         </nav>
-
-        {/* Mobile Fullscreen Menu Drawer (Positioned outside nav h-20 container) */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-[#09090B] border-t border-white/10 shadow-2xl px-6 pt-6 pb-12 flex flex-col justify-between overflow-y-auto z-40">
-            <div className="flex flex-col space-y-3">
-              <span className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1 px-1">Navigation</span>
-              <NavLink to="/" end onClick={scrollToTop} className={mobileNavLinkStyle}>
-                <span>Home</span>
-                <span className="text-[#3B82F6]">➔</span>
-              </NavLink>
-              <NavLink to="/solutions" onClick={scrollToTop} className={mobileNavLinkStyle}>
-                <span>Solutions</span>
-                <span className="text-[#3B82F6]">➔</span>
-              </NavLink>
-              <NavLink to="/systems" onClick={scrollToTop} className={mobileNavLinkStyle}>
-                <span>Business Systems</span>
-                <span className="text-[#3B82F6]">➔</span>
-              </NavLink>
-              <NavLink to="/about" onClick={scrollToTop} className={mobileNavLinkStyle}>
-                <span>About Us</span>
-                <span className="text-[#3B82F6]">➔</span>
-              </NavLink>
-              <NavLink to="/contact" onClick={scrollToTop} className={mobileNavLinkStyle}>
-                <span>Contact</span>
-                <span className="text-[#3B82F6]">➔</span>
-              </NavLink>
-            </div>
-
-            <div className="pt-6 space-y-3">
-              <Link 
-                to="/contact" 
-                onClick={scrollToTop} 
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold text-base py-4 rounded-xl hover:opacity-95 transition-all text-center block shadow-lg shadow-blue-500/25 active:scale-98"
-              >
-                Book Free AI Audit →
-              </Link>
-              
-              <a 
-                href="https://wa.me/916303690660" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold text-sm py-3 rounded-xl hover:bg-emerald-500/20 transition-all text-center flex items-center justify-center gap-2 active:scale-98"
-              >
-                <span>💬</span> Chat on WhatsApp (+91 63036 90660)
-              </a>
-            </div>
-          </div>
-        )}
       </header>
+
+      {/* Mobile Fullscreen Menu Drawer (Rendered outside header to escape backdrop-filter CSS clipping) */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 top-20 bg-[#09090B] border-t border-white/10 shadow-2xl px-6 pt-6 pb-12 flex flex-col justify-between overflow-y-auto z-[999]">
+          <div className="flex flex-col space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1 px-1">Navigation</span>
+            <NavLink to="/" end onClick={scrollToTop} className={mobileNavLinkStyle}>
+              <span>Home</span>
+              <span className="text-[#3B82F6]">➔</span>
+            </NavLink>
+            <NavLink to="/solutions" onClick={scrollToTop} className={mobileNavLinkStyle}>
+              <span>Solutions</span>
+              <span className="text-[#3B82F6]">➔</span>
+            </NavLink>
+            <NavLink to="/systems" onClick={scrollToTop} className={mobileNavLinkStyle}>
+              <span>Business Systems</span>
+              <span className="text-[#3B82F6]">➔</span>
+            </NavLink>
+            <NavLink to="/about" onClick={scrollToTop} className={mobileNavLinkStyle}>
+              <span>About Us</span>
+              <span className="text-[#3B82F6]">➔</span>
+            </NavLink>
+            <NavLink to="/contact" onClick={scrollToTop} className={mobileNavLinkStyle}>
+              <span>Contact</span>
+              <span className="text-[#3B82F6]">➔</span>
+            </NavLink>
+          </div>
+
+          <div className="pt-6 space-y-3">
+            <Link 
+              to="/contact" 
+              onClick={scrollToTop} 
+              className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold text-base py-4 rounded-xl hover:opacity-95 transition-all text-center block shadow-lg shadow-blue-500/25 active:scale-98"
+            >
+              Book Free AI Audit →
+            </Link>
+            
+            <a 
+              href="https://wa.me/916303690660" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold text-sm py-3 rounded-xl hover:bg-emerald-500/20 transition-all text-center flex items-center justify-center gap-2 active:scale-98"
+            >
+              <span>💬</span> Chat on WhatsApp (+91 63036 90660)
+            </a>
+          </div>
+        </div>
+      )}
 
       {/* Main Content Area */}
       <main className="flex-grow">
