@@ -244,7 +244,7 @@ export default function Contact() {
                 
                 <h3 className="text-2xl font-bold mb-1 relative z-10">Prefer to skip the form?</h3>
                 <p className="text-white/60 mb-4 text-sm relative z-10 max-w-md">
-                  Schedule a direct 30-minute Zoom call with our Lead AI Strategist using our live calendar below.
+                  Schedule a direct 10-minute Zoom call with our Lead AI Strategist using our live calendar below.
                 </p>
                 
                 {/* Live Calendly Widget (Light Mode) */}
