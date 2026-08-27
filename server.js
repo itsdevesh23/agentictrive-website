@@ -19,7 +19,7 @@ app.get('/api/health', (req, res) => {
 
 // Contact Form Endpoint
 app.post('/api/contact', async (req, res) => {
-  const { firstName, lastName, workEmail, phone, company, serviceType, message } = req.body;
+  const { firstName, lastName, workEmail, phone, company, message } = req.body;
 
   if (!firstName || !lastName || !workEmail || !message) {
     return res.status(400).json({ 
@@ -34,7 +34,7 @@ app.post('/api/contact', async (req, res) => {
 
   if (!gmailUser || !gmailPass) {
     console.log('⚠️ [SMTP Simulation] Received contact form submission:', {
-      firstName, lastName, workEmail, phone, company, serviceType, message
+      firstName, lastName, workEmail, phone, company, message
     });
     return res.status(200).json({
       success: true,
@@ -58,10 +58,10 @@ app.post('/api/contact', async (req, res) => {
       from: `"Agentictrive Agency" <${gmailUser}>`,
       to: gmailUser,
       replyTo: workEmail,
-      subject: `🚨 New Request: ${firstName} ${lastName} (${serviceType || 'Web/AI'}) - ${company || 'Individual'}`,
+      subject: `🚨 New Lead: ${firstName} ${lastName} (${company || 'Individual'})`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #09090B; color: #ffffff; padding: 30px; border-radius: 16px; border: 1px solid #1e293b;">
-          <h2 style="color: #3b82f6; margin-top: 0;">New Project / Audit Request</h2>
+          <h2 style="color: #3b82f6; margin-top: 0;">New Project / Inquiry Request</h2>
           <p style="color: #94a3b8;">A new prospect submitted an inquiry through the Agentictrive contact form.</p>
           
           <hr style="border: 0; border-top: 1px solid #334155; margin: 20px 0;" />
@@ -70,10 +70,6 @@ app.post('/api/contact', async (req, res) => {
             <tr>
               <td style="padding: 8px 0; color: #94a3b8; font-weight: bold; width: 140px;">Name:</td>
               <td style="padding: 8px 0;">${firstName} ${lastName}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 0; color: #94a3b8; font-weight: bold;">Service Needed:</td>
-              <td style="padding: 8px 0; color: #38bdf8; font-weight: bold;">${serviceType || 'Custom Web Development / AI'}</td>
             </tr>
             <tr>
               <td style="padding: 8px 0; color: #94a3b8; font-weight: bold;">Work Email:</td>
@@ -90,7 +86,7 @@ app.post('/api/contact', async (req, res) => {
           </table>
 
           <div style="margin-top: 20px; background: #18181b; padding: 20px; border-radius: 12px; border: 1px solid #27272a;">
-            <h4 style="margin: 0 0 10px 0; color: #3b82f6;">Project Details & Goals:</h4>
+            <h4 style="margin: 0 0 10px 0; color: #3b82f6;">How can we help?</h4>
             <p style="margin: 0; color: #cbd5e1; white-space: pre-line;">${message}</p>
           </div>
 
@@ -110,7 +106,7 @@ app.post('/api/contact', async (req, res) => {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #09090B; color: #ffffff; padding: 30px; border-radius: 16px; border: 1px solid #1e293b;">
           <h2 style="color: #3b82f6; margin-top: 0;">Thank You, ${firstName}!</h2>
           <p style="color: #e2e8f0; line-height: 1.6;">
-            We've received your request for <strong>${serviceType || 'your business'}</strong> (${company || 'your business'}).
+            We've received your request for <strong>${company || 'your business'}</strong>.
           </p>
           <p style="color: #94a3b8; line-height: 1.6;">
             One of our Lead Strategists is reviewing your requirements and will reach out to you within <strong>24 business hours</strong> with initial recommendations.
@@ -141,7 +137,7 @@ app.post('/api/contact', async (req, res) => {
         fetch(sheetWebhook, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ firstName, lastName, workEmail, phone, company, serviceType, message })
+          body: JSON.stringify({ firstName, lastName, workEmail, phone, company, message })
         }).catch(err => console.error('⚠️ Google Sheets Sync Error:', err))
       );
     }

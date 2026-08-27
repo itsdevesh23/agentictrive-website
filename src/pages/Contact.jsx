@@ -23,7 +23,6 @@ export default function Contact() {
     workEmail: '',
     phone: '',
     company: '',
-    serviceType: 'Custom Web Development',
     message: ''
   });
 
@@ -58,7 +57,6 @@ export default function Contact() {
           workEmail: '', 
           phone: '', 
           company: '', 
-          serviceType: 'Custom Web Development', 
           message: '' 
         });
       } else {
@@ -190,25 +188,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-white/70 uppercase tracking-wider">Primary Requirement / Service</label>
-                    <select
-                      name="serviceType"
-                      value={formData.serviceType}
-                      onChange={handleChange}
-                      className="w-full bg-[#18181B] border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary transition-colors cursor-pointer"
-                    >
-                      <option value="Custom Web Development" className="bg-[#18181B] text-white">🌐 Custom Website Development (Bespoke UI/UX)</option>
-                      <option value="Landing Page & Funnel" className="bg-[#18181B] text-white">⚡ High-Converting Landing Page / Funnel</option>
-                      <option value="Website Redesign & Speed" className="bg-[#18181B] text-white">🔄 Website Redesign & Performance Upgrade</option>
-                      <option value="AI Voice & Chatbot Agents" className="bg-[#18181B] text-white">🤖 AI Voice Employees & Receptionists</option>
-                      <option value="Business Automation & CRM" className="bg-[#18181B] text-white">⚙️ Business Automation & CRM Workflows</option>
-                      <option value="Complete Package (Website + AI)" className="bg-[#18181B] text-white">🚀 Complete Package (Website + AI Systems)</option>
-                      <option value="Other Consultation" className="bg-[#18181B] text-white">💡 Other Custom Inquiry</option>
-                    </select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-white/70 uppercase tracking-wider">Project Details & Goals</label>
+                    <label className="text-sm font-bold text-white/70 uppercase tracking-wider">How can we help?</label>
                     <textarea 
                       rows="4" 
                       name="message"
@@ -216,7 +196,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required 
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none" 
-                      placeholder="Tell us about your website requirements, target audience, timeline, or automation goals..."
+                      placeholder="Tell us about your project requirements, website goals, or automation needs..."
                     ></textarea>
                   </div>
 
