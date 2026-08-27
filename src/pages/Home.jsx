@@ -7,7 +7,7 @@ import {
   Building2, Store, PhoneCall, Clock, SlidersHorizontal, Globe,
   Laptop, Code, Sparkles, Zap
 } from 'lucide-react';
-import hero3dImg from '../assets/hero_3d_render.png';
+import HeroVisualHub from '../components/HeroVisualHub';
 
 // Fade Up Variant
 const fadeUp = {
@@ -81,52 +81,15 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Right Content - 3D Architectural AI Hub */}
+            {/* Right Content - Interactive 3D Architectural AI Hub */}
             <motion.div 
               custom={4} 
               variants={fadeUp} 
               initial="hidden" 
               animate="visible" 
-              className="relative w-full flex items-center justify-center mt-8 lg:mt-0"
+              className="w-full flex items-center justify-center mt-4 lg:mt-0"
             >
-              {/* Ambient Glows around the 3D installation */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600/20 via-purple-600/20 to-cyan-400/20 rounded-3xl blur-3xl opacity-70 pointer-events-none"></div>
-              
-              <div className="relative w-full max-w-lg lg:max-w-xl group">
-                {/* 3D Render Container */}
-                <motion.div 
-                  className="relative rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.9)] border border-white/10 glass-card-premium"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                >
-                  <img 
-                    src={hero3dImg} 
-                    alt="Agentictrive Intelligent Business Systems 3D Hub" 
-                    className="w-full h-auto object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
-                    loading="eager"
-                  />
-                  
-                  {/* Subtle Interactive Lighting Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#09090B]/60 via-transparent to-white/[0.04] pointer-events-none"></div>
-                </motion.div>
-
-                {/* Floating Micro Badge / Live Status */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8, duration: 0.6 }}
-                  className="absolute -bottom-4 -left-2 sm:bottom-4 sm:-left-6 glass-card border border-white/15 px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-3 backdrop-blur-xl z-20"
-                >
-                  <span className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                  </span>
-                  <div className="text-left">
-                    <p className="text-[10px] uppercase tracking-wider text-white/50 font-mono-code font-bold">Autonomous Engine</p>
-                    <p className="text-xs font-bold text-white">Intelligent Systems Active</p>
-                  </div>
-                </motion.div>
-              </div>
+              <HeroVisualHub />
             </motion.div>
           </div>
         </div>
