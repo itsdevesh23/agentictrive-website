@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import { 
   ArrowRight, CheckCircle2, XCircle, X, Bot, 
   Workflow, LineChart, Users, Database, MessageSquare,
-  Building2, Store, PhoneCall, Clock, SlidersHorizontal, Globe
+  Building2, Store, PhoneCall, Clock, SlidersHorizontal, Globe,
+  Laptop, Code, Sparkles, Zap
 } from 'lucide-react';
 
 // Fade Up Variant
@@ -240,6 +241,102 @@ export default function Home() {
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* WEB DEVELOPMENT & BESPOKE EXPERIENCES SHOWCASE */}
+      <section className="py-28 relative bg-white/[0.01] border-b border-white/5">
+        <div className="max-w-container-max mx-auto px-4 sm:px-6 md:px-margin-desktop">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono-code font-bold uppercase tracking-wider mb-4">
+              <Sparkles size={14} /> Bespoke Web Development
+            </div>
+            <h2 className="font-headline-lg text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
+              We Build Websites That Look Stunning & <span className="gradient-text-primary">Work 24/7</span>
+            </h2>
+            <p className="text-white/60 text-lg leading-relaxed">
+              Tailored completely to your requirements. Ultra-fast, mobile-first design with built-in AI chatbots, WhatsApp capture, and automated CRM pipelines from Day 1.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+            {[
+              {
+                icon: <Laptop size={26} className="text-cyan-400" />,
+                title: "Custom Business Websites",
+                desc: "Bespoke design, animations, and high-converting layouts crafted precisely for your brand identity.",
+                badge: "100% Custom"
+              },
+              {
+                icon: <Zap size={26} className="text-blue-400" />,
+                title: "High-Converting Funnels",
+                desc: "Laser-focused landing pages engineered for high ad conversion rates and instant lead generation.",
+                badge: "99+ PageSpeed"
+              },
+              {
+                icon: <Code size={26} className="text-violet-400" />,
+                title: "Website Redesign",
+                desc: "Transform outdated, slow legacy websites into modern, ultra-responsive web applications.",
+                badge: "Modern Stack"
+              },
+              {
+                icon: <Bot size={26} className="text-emerald-400" />,
+                title: "AI-Integrated Web Apps",
+                desc: "Every website comes equipped with 24/7 AI receptionists, booking widgets, and Google Sheets sync.",
+                badge: "AI-Supercharged"
+              }
+            ].map((card, i) => (
+              <motion.div
+                key={i}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                className="glass-card-premium p-7 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-cyan-500/40 transition-all group"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      {card.icon}
+                    </div>
+                    <span className="text-[11px] font-mono-code font-bold uppercase tracking-wider text-white/50 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                      {card.badge}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-white group-hover:text-cyan-300 transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="text-white/60 text-sm leading-relaxed">
+                    {card.desc}
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-cyan-400">
+                  <Link to="/solutions" className="flex items-center gap-1 hover:underline">
+                    Explore Solution <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Web Tech Stack & Delivery Highlights */}
+          <div className="bg-gradient-to-r from-blue-900/20 via-cyan-900/10 to-purple-900/20 border border-white/10 rounded-3xl p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="space-y-2 text-center lg:text-left">
+              <h3 className="text-2xl font-bold text-white">Have a specific website requirement in mind?</h3>
+              <p className="text-white/60 text-sm max-w-xl">
+                From luxury corporate & clinic portfolios to e-commerce storefronts and custom web apps — we design, code, and deploy in 7 to 14 days.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto">
+              <Link to="/contact" className="bg-white text-black font-bold text-sm px-7 py-3.5 rounded-full hover:bg-white/90 transition-all hover:scale-105 active:scale-95 text-center shadow-lg">
+                Request Website Quote →
+              </Link>
+              <Link to="/solutions" className="glass-card text-white font-semibold text-sm px-6 py-3.5 rounded-full hover:bg-white/10 transition-all text-center">
+                View Web Solutions
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

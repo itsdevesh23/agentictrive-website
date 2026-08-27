@@ -169,10 +169,10 @@ export default function Layout() {
             <div>
               <h5 className="font-bold text-base text-white mb-4">Services</h5>
               <ul className="space-y-3 text-sm text-white/60">
-                <li><Link to="/solutions" onClick={scrollToTop} className="hover:text-white transition-colors">AI Web Development</Link></li>
-                <li><Link to="/solutions" onClick={scrollToTop} className="hover:text-white transition-colors">Voice AI Agents</Link></li>
-                <li><Link to="/systems" onClick={scrollToTop} className="hover:text-white transition-colors">CRM Automation</Link></li>
-                <li><Link to="/systems" onClick={scrollToTop} className="hover:text-white transition-colors">Enterprise Workflows</Link></li>
+                <li><Link to="/solutions" onClick={scrollToTop} className="hover:text-white transition-colors">Custom Web Development</Link></li>
+                <li><Link to="/solutions" onClick={scrollToTop} className="hover:text-white transition-colors">Landing Pages & Funnels</Link></li>
+                <li><Link to="/solutions" onClick={scrollToTop} className="hover:text-white transition-colors">Website Redesign & Speed</Link></li>
+                <li><Link to="/solutions" onClick={scrollToTop} className="hover:text-white transition-colors">Voice AI & Automation</Link></li>
               </ul>
             </div>
 

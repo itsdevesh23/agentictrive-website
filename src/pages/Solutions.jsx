@@ -70,6 +70,52 @@ const categories = [
     ]
   },
   {
+    title: "Web Development & Digital Experiences",
+    desc: "Bespoke, high-converting websites engineered to your exact requirements with built-in AI intelligence.",
+    solutions: [
+      {
+        name: "Custom Business & Corporate Websites",
+        icon: <Laptop size={24} className="text-cyan-400" />,
+        problem: "Outdated, generic templates that fail to represent your premium brand and lose prospect trust.",
+        solution: "100% custom-built, ultra-responsive modern websites tailored to your exact business requirements.",
+        benefits: ["Tailored brand UI/UX", "Mobile-first speed (99+ PageSpeed)", "Built-in AI chatbot ready"],
+        useCases: "Clinics, Law Firms, Real Estate, Hotels, Startups",
+        tech: "React, Next.js, Tailwind CSS, Vercel",
+        timeline: "1-2 Weeks"
+      },
+      {
+        name: "High-Converting Landing Pages & Funnels",
+        icon: <MonitorSmartphone size={24} className="text-blue-400" />,
+        problem: "Spending on Google/Meta ads but losing visitors due to slow, unoptimized landing pages.",
+        solution: "Laser-focused single-page funnels with interactive booking, instant lead capture, and persuasive copy.",
+        benefits: ["Maximized ad ROI", "Sub-second load times", "Direct WhatsApp & CRM sync"],
+        useCases: "Product Launches, Event Lead Gen, Campaigns",
+        tech: "Next.js, Framer Motion, Lead Webhooks",
+        timeline: "3-5 Days"
+      },
+      {
+        name: "Website Modernization & Redesign",
+        icon: <Code size={24} className="text-violet-400" />,
+        problem: "Legacy WordPress/Wix website that is slow, clunky, insecure, and looks like it was built a decade ago.",
+        solution: "Complete architectural revamp into a lightning-fast, futuristic web application with zero bloat.",
+        benefits: ["10x faster performance", "Modern dark/light aesthetics", "Bank-grade SSL security"],
+        useCases: "Established Businesses, Agencies, Consultants",
+        tech: "Modern JavaScript, Jamstack, Headless CMS",
+        timeline: "1-2 Weeks"
+      },
+      {
+        name: "E-Commerce & Custom Web Portals",
+        icon: <BrainCircuit size={24} className="text-amber-400" />,
+        problem: "Needing custom client dashboards, appointment booking portals, or specialized online payment flows.",
+        solution: "Full-stack custom web applications and e-commerce portals built precisely to your workflow specs.",
+        benefits: ["Automated order flows", "Custom client login portals", "Seamless payment gateway"],
+        useCases: "D2C Brands, Service Providers, SaaS",
+        tech: "Node.js, PostgreSQL, Stripe/Razorpay, Next.js",
+        timeline: "2-3 Weeks"
+      }
+    ]
+  },
+  {
     title: "Business Intelligence",
     desc: "Make decisions based on real-time data, not gut feelings.",
     solutions: [
