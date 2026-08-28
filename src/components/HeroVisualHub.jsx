@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Bot, Zap, Globe, Cpu, Layers } from 'lucide-react';
-import iconImg from '../assets/agentictrive_icon.svg';
+import iconImg from '../assets/agentictrive_icon.png';
 
 export default function HeroVisualHub() {
   return (

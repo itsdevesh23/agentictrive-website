@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-import iconImg from '../assets/agentictrive_icon.svg';
+import iconImg from '../assets/agentictrive_icon.png';
+import fullLogoImg from '../assets/agentictrive_icon_2.png';
 
 export default function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
