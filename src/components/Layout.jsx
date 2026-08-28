@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import iconImg from '../assets/agentictrive_icon.png';
 import fullLogoImg from '../assets/agentictrive_icon_2.png';
+import textImg from '../assets/agentictrive_text.png';
 
 export default function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -47,11 +48,8 @@ export default function Layout() {
         <nav className="h-20 flex items-center justify-between max-w-container-max mx-auto px-4 md:px-margin-desktop w-full">
           {/* Logo */}
           <Link to="/" onClick={scrollToTop} className="flex items-center gap-2 sm:gap-3 group shrink-0">
-            <img src={iconImg} alt="Agentictrive Icon" className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.7)] group-hover:scale-105 transition-transform" />
-            <span className="font-headline-md text-lg sm:text-xl xl:text-2xl font-extrabold tracking-wider uppercase flex items-center select-none">
-              <span className="text-white drop-shadow-sm">AGENTIC</span>
-              <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 bg-clip-text text-transparent ml-[2px] font-black drop-shadow-[0_0_15px_rgba(59,130,246,0.6)]">TRIVE</span>
-            </span>
+            <img src={iconImg} alt="Agentictrive Icon" className="w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.7)] group-hover:scale-105 transition-transform" />
+            <img src={textImg} alt="AGENTIC TRIVE" className="h-5 sm:h-6 lg:h-7 w-auto object-contain drop-shadow-sm group-hover:scale-105 transition-transform" />
           </Link>
 
           {/* Desktop Links */}
@@ -149,10 +147,7 @@ export default function Layout() {
             <div className="sm:col-span-2 md:col-span-1">
               <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 mb-4 group">
                 <img src={iconImg} alt="Agentictrive Icon" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform" />
-                <span className="font-headline-md text-xl md:text-2xl font-extrabold tracking-widest uppercase flex items-center select-none">
-                  <span className="text-white drop-shadow-sm">AGENTIC</span>
-                  <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 bg-clip-text text-transparent ml-[3px] font-black">TRIVE</span>
-                </span>
+                <img src={textImg} alt="AGENTIC TRIVE" className="h-6 md:h-7 w-auto object-contain group-hover:scale-105 transition-transform" />
               </Link>
               <p className="text-sm text-white/60 leading-relaxed max-w-sm">Building intelligent, autonomous systems for the modern workforce.</p>
             </div>
