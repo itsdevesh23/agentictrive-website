@@ -47,9 +47,8 @@ export default function Layout() {
       <header className="fixed top-0 w-full z-50 bg-gradient-to-b from-[#09090B] via-[#09090B]/90 to-[#09090B]/70 backdrop-blur-xl border-b border-white/10 shadow-2xl">
         <nav className="h-20 flex items-center justify-between max-w-container-max mx-auto px-4 md:px-margin-desktop w-full">
           {/* Logo */}
-          <Link to="/" onClick={scrollToTop} className="flex items-center gap-2 sm:gap-3 group shrink-0">
-            <img src={iconImg} alt="Agentictrive Icon" className="w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.7)] group-hover:scale-105 transition-transform" />
-            <img src={textImg} alt="AGENTIC TRIVE" className="h-5 sm:h-6 lg:h-7 w-auto object-contain drop-shadow-sm group-hover:scale-105 transition-transform" />
+          <Link to="/" onClick={scrollToTop} className="flex items-center group shrink-0">
+            <img src={fullLogoImg} alt="Agentictrive" className="h-6 sm:h-7 lg:h-8 w-auto max-w-[170px] sm:max-w-[200px] object-contain drop-shadow-[0_0_12px_rgba(59,130,246,0.6)] group-hover:scale-105 transition-transform" />
           </Link>
 
           {/* Desktop Links */}
@@ -145,9 +144,8 @@ export default function Layout() {
         <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
             <div className="sm:col-span-2 md:col-span-1">
-              <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 mb-4 group">
-                <img src={iconImg} alt="Agentictrive Icon" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform" />
-                <img src={textImg} alt="AGENTIC TRIVE" className="h-6 md:h-7 w-auto object-contain group-hover:scale-105 transition-transform" />
+              <Link to="/" onClick={scrollToTop} className="flex items-center mb-4 group">
+                <img src={fullLogoImg} alt="Agentictrive" className="h-7 md:h-8 w-auto max-w-[200px] md:max-w-[220px] object-contain group-hover:scale-105 transition-transform" />
               </Link>
               <p className="text-sm text-white/60 leading-relaxed max-w-sm">Building intelligent, autonomous systems for the modern workforce.</p>
             </div>

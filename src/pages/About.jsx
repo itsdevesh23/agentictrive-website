@@ -23,7 +23,7 @@ export default function About() {
       <section className="relative pt-32 pb-8 hero-gradient-bg flex items-center justify-center">
         <div className="max-w-container-max mx-auto px-margin-desktop text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex justify-center mb-6">
-            <img src={logoImg} alt="Agentictrive Official Logo" className="h-52 md:h-60 w-auto object-contain drop-shadow-[0_0_40px_rgba(59,130,246,0.7)]" />
+            <img src={logoImg} alt="Agentictrive Official Logo" className="h-16 md:h-20 w-auto max-w-xs sm:max-w-sm object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.7)]" />
           </motion.div>
           <motion.h1 initial="hidden" animate="visible" variants={fadeUp} custom={1} className="font-headline-xl text-5xl lg:text-6xl font-bold mb-6">
             Building the Future of <br/><span className="gradient-text-primary">Intelligent Businesses</span>
