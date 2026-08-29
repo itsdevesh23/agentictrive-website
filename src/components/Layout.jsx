@@ -42,9 +42,9 @@ export default function Layout() {
     }`;
 
   return (
-    <div className="bg-blue-curtain bg-[#020617] min-h-screen text-white font-body-md overflow-x-hidden flex flex-col relative">
+    <div className="bg-[#09090B] min-h-screen text-white font-body-md overflow-x-hidden flex flex-col relative">
       {/* Navigation Header */}
-      <header className="fixed top-0 w-full z-50 bg-gradient-to-b from-[#020617] via-[#020617]/90 to-[#020617]/70 backdrop-blur-xl border-b border-white/10 shadow-2xl">
+      <header className="fixed top-0 w-full z-50 bg-gradient-to-b from-[#09090B] via-[#09090B]/90 to-[#09090B]/70 backdrop-blur-xl border-b border-white/10 shadow-2xl">
         <nav className="h-20 flex items-center justify-between max-w-container-max mx-auto px-4 md:px-margin-desktop w-full">
           {/* Logo */}
           <Link to="/" onClick={scrollToTop} className="flex items-center group shrink-0">
@@ -88,7 +88,7 @@ export default function Layout() {
 
       {/* Mobile Fullscreen Menu Drawer (Rendered outside header to escape backdrop-filter CSS clipping) */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 bg-blue-curtain bg-[#020617] border-t border-blue-500/20 shadow-2xl px-6 pt-6 pb-12 flex flex-col justify-between overflow-y-auto z-[999]">
+        <div className="lg:hidden fixed inset-0 top-20 bg-[#09090B] border-t border-white/10 shadow-2xl px-6 pt-6 pb-12 flex flex-col justify-between overflow-y-auto z-[999]">
           <div className="flex flex-col space-y-3">
             <span className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1 px-1">Navigation</span>
             <NavLink to="/" end onClick={scrollToTop} className={mobileNavLinkStyle}>
@@ -140,7 +140,7 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-blue-500/20 bg-[#020617]/95 backdrop-blur-xl pt-14 pb-10 mt-auto">
+      <footer className="border-t border-white/10 bg-[#050505] pt-14 pb-10 mt-auto">
         <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
             <div className="sm:col-span-2 md:col-span-1">
