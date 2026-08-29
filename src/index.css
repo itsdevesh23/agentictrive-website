@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap');
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
 @layer base {
   body {
-    background-color: #09090B;
+    background-color: #020617;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -13,18 +12,37 @@
 }
 
 @layer utilities {
+  /* Deep Royal Blue Vertical Curtain Background System */
+  .bg-blue-curtain {
+    background-color: #020617;
+    background-image: 
+      radial-gradient(ellipse 100% 80% at 50% 20%, rgba(37, 99, 235, 0.4) 0%, rgba(15, 23, 42, 0.85) 60%, #020617 100%),
+      repeating-linear-gradient(
+        90deg,
+        rgba(2, 6, 23, 0.98) 0px,
+        rgba(3, 10, 30, 0.92) 10px,
+        rgba(15, 30, 75, 0.75) 22px,
+        rgba(29, 78, 216, 0.6) 32px,
+        rgba(37, 99, 235, 0.75) 40px,
+        rgba(29, 78, 216, 0.6) 48px,
+        rgba(15, 30, 75, 0.75) 58px,
+        rgba(3, 10, 30, 0.92) 70px,
+        rgba(2, 6, 23, 0.98) 80px
+      );
+  }
+
   .glass-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .glass-card-premium {
-    background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+    background: linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%);
     backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
   }
 
   .gradient-text {
@@ -35,14 +53,28 @@
   }
 
   .gradient-text-primary {
-    background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+    background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .hero-gradient-bg {
-    background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, rgba(9, 9, 11, 1) 50%);
+    background-color: #020617;
+    background-image: 
+      radial-gradient(ellipse 90% 70% at 50% 15%, rgba(37, 99, 235, 0.45) 0%, rgba(15, 23, 42, 0.85) 60%, #020617 100%),
+      repeating-linear-gradient(
+        90deg,
+        rgba(2, 6, 23, 0.98) 0px,
+        rgba(3, 10, 30, 0.92) 10px,
+        rgba(15, 30, 75, 0.75) 22px,
+        rgba(29, 78, 216, 0.6) 32px,
+        rgba(37, 99, 235, 0.75) 40px,
+        rgba(29, 78, 216, 0.6) 48px,
+        rgba(15, 30, 75, 0.75) 58px,
+        rgba(3, 10, 30, 0.92) 70px,
+        rgba(2, 6, 23, 0.98) 80px
+      );
   }
 
   .glow-border {
