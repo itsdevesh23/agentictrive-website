@@ -191,10 +191,12 @@ export default function Layout() {
           </div>
 
           <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40 text-center sm:text-left">
-            <p>© {new Date().getFullYear()} Agentictrive Agency. All rights reserved.</p>
-            <div className="flex items-center gap-6">
-              <Link to="/contact" onClick={scrollToTop} className="hover:text-white/80 transition-colors">Privacy Policy</Link>
-              <Link to="/contact" onClick={scrollToTop} className="hover:text-white/80 transition-colors">Terms of Service</Link>
+            <p>© {new Date().getFullYear()} AgenticTrive Technologies. All rights reserved.</p>
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+              <Link to="/privacy-policy" onClick={scrollToTop} className="hover:text-white/80 transition-colors">Privacy Policy</Link>
+              <Link to="/terms-and-conditions" onClick={scrollToTop} className="hover:text-white/80 transition-colors">Terms & Conditions</Link>
+              <Link to="/refund-policy" onClick={scrollToTop} className="hover:text-white/80 transition-colors">Refund Policy</Link>
+              <Link to="/cookie-policy" onClick={scrollToTop} className="hover:text-white/80 transition-colors">Cookie Policy</Link>
             </div>
           </div>
         </div>

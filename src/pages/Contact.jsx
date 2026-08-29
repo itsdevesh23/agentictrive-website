@@ -216,6 +216,10 @@ export default function Contact() {
                       </>
                     )}
                   </button>
+                  
+                  <p className="text-xs text-white/40 text-center mt-2">
+                    By submitting this form, you agree to our <Link to="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link> and <Link to="/terms-and-conditions" className="text-primary hover:underline">Terms & Conditions</Link>.
+                  </p>
                 </form>
               )}
 
