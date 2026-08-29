@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import iconImg from '../assets/agentictrive_icon.png';
 import fullLogoImg from '../assets/agentictrive_icon_2.png';
 import textImg from '../assets/agentictrive_text.png';
+import CookieBanner from './CookieBanner';
 
 export default function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -201,6 +202,7 @@ export default function Layout() {
           </div>
         </div>
       </footer>
+      <CookieBanner />
     </div>
   );
 }
