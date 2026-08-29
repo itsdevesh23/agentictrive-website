@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Mail, MapPin, Clock, MessageCircle, Plus, Minus, Loader2, CheckCircle2, AlertCircle
+  ArrowRight, Mail, MapPin, Globe, Clock, MessageCircle, Plus, Minus, Loader2, CheckCircle2, AlertCircle
 } from 'lucide-react';
 
 const fadeUp = {
@@ -237,8 +237,8 @@ export default function Contact() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-bold flex items-center gap-2 mb-2"><MapPin size={18} className="text-red-400"/> Location</h4>
-                  <p className="text-white/60">22-6-45 Akkarampalli, Tirupati<br/>Andhra Pradesh 527501</p>
+                  <h4 className="font-bold flex items-center gap-2 mb-2"><Globe size={18} className="text-blue-400"/> Location</h4>
+                  <p className="text-white/60">Digital & Remote Operations<br/>Serving Global Clients</p>
                 </div>
                 <div>
                   <h4 className="font-bold flex items-center gap-2 mb-2"><Clock size={18} className="text-purple-400"/> Business Hours</h4>

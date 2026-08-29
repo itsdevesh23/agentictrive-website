@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
           <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-1 text-xs md:text-sm">
             <p><strong className="text-white">Email:</strong> agentictrive@gmail.com</p>
             <p><strong className="text-white">Phone:</strong> +91-6303690660</p>
-            <p><strong className="text-white">Address:</strong> 10-6-259, K.K.Layout, Tirupati, Andhra Pradesh, 517501</p>
+            <p><strong className="text-white">Operations:</strong> Digital & Remote Agency, India</p>
           </div>
         </section>
 
@@ -120,7 +120,6 @@ export default function PrivacyPolicy() {
           <div className="bg-blue-600/10 border border-blue-500/30 rounded-xl p-4 text-xs md:text-sm space-y-1">
             <p><strong className="text-white">Name:</strong> Devesh Munagala</p>
             <p><strong className="text-white">Grievance Email:</strong> <a href="mailto:deveshmunagala23@gmail.com" className="text-blue-400 hover:underline">deveshmunagala23@gmail.com</a></p>
-            <p><strong className="text-white">Address:</strong> 10-6-259, K.K.Layout, Tirupati, Andhra Pradesh, 517501</p>
           </div>
         </section>
 

@@ -174,9 +174,6 @@ export default function Layout() {
             <div>
               <h5 className="font-bold text-base text-white mb-4">Get in Touch</h5>
               <ul className="space-y-3 text-sm text-white/60">
-                <li className="flex items-start gap-2">
-                  <span className="shrink-0 mt-0.5">📍</span> <span className="text-xs sm:text-sm">22-6-45 Akkarampalli, Tirupati, AP, 517501</span>
-                </li>
                 <li className="flex items-center gap-2">
                   <span>✉️</span> <a href="mailto:agentictrive@gmail.com" className="hover:text-white transition-colors text-xs sm:text-sm">agentictrive@gmail.com</a>
                 </li>
